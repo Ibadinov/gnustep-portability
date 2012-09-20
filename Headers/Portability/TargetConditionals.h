@@ -24,7 +24,7 @@
  *              TARGET_OS_HURD
  *              TARGET_OS_LINUX
  *              TARGET_OS_SOLARIS
- *          TARGET_OS_WINDOWS
+ *          TARGET_OS_WIN32
  *
  * TARGET_TR:
  *          TARGET_RT_64_BIT
@@ -44,14 +44,14 @@
 #elif defined(__unix__) || defined(__unix) || defined(unix)
     #define TARGET_OS_UNIX      1
 #elif defined (_WIN32) || defined(_WIN64) || defined(__WIN32__) || defined(__WINDOWS__) || defined(__TOS_WIN__)
-    #define TARGET_OS_WINDOWS   1
+    #define TARGET_OS_WIN32     1
 #endif
 
 #if defined(TARGET_OS_DARWIN)
     #include <TargetConditionalsDarwin.h>
 #elif defined(TARGET_OS_UNIX)
     #include <TargetConditionalsUnix.h>
-#elif defined(TARGET_OS_WINDOWS)
+#elif defined(TARGET_OS_WIN32)
     #include <TargetConditionalsWindows.h>
 #else
     #error TargetConditionals.h: unknown operating system family
@@ -205,11 +205,11 @@
  */
 #if defined(TARGET_OS_DARWIN) && TARGET_OS_DARWIN
     #define TARGET_OS_UNIX      0
-    #define TARGET_OS_WINDOWS   0
+    #define TARGET_OS_WIN32     0
 #elif defined(TARGET_OS_UNIX) && TARGET_OS_UNIX
     #define TARGET_OS_MAC       0
-    #define TARGET_OS_WINDOWS   0
-#elif defined(TARGET_OS_WINDOWS) && TARGET_OS_WINDOWS
+    #define TARGET_OS_WIN32     0
+#elif defined(TARGET_OS_WIN32) && TARGET_OS_WIN32
     #define TARGET_OS_MAC       0
     #define TARGET_OS_UNIX      0
 #else
