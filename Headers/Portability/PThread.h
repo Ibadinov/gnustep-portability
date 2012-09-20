@@ -3,7 +3,7 @@
 
 #include <TargetConditionals.h>
 
-#if defined(TARGET_OS_MAC)
+#if defined(TARGET_OS_MAC) && TARGET_OS_MAC
 
     #include <libkern/OSAtomic.h>
 
