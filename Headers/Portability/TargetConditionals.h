@@ -20,8 +20,10 @@
  *              TARGET_OS_EMBEDDED
  *              TARGET_OS_IPHONE
  *          TARGET_OS_UNIX
- *              TARGET_OS_LINUX
  *              TARGET_OS_BSD
+ *              TARGET_OS_HURD
+ *              TARGET_OS_LINUX
+ *              TARGET_OS_SOLARIS
  *          TARGET_OS_WINDOWS
  *
  * TARGET_TR:
@@ -45,7 +47,7 @@
     #define TARGET_OS_WINDOWS   1
 #endif
 
-#if defined(TARGET_OS_MAC)
+#if defined(TARGET_OS_DARWIN)
     #include <TargetConditionalsDarwin.h>
 #elif defined(TARGET_OS_UNIX)
     #include <TargetConditionalsUnix.h>
@@ -201,7 +203,7 @@
 /*
  * TARGET_OS negatives
  */
-#if defined(TARGET_OS_MAC) && TARGET_OS_MAC
+#if defined(TARGET_OS_DARWIN) && TARGET_OS_DARWIN
     #define TARGET_OS_UNIX      0
     #define TARGET_OS_WINDOWS   0
 #elif defined(TARGET_OS_UNIX) && TARGET_OS_UNIX
