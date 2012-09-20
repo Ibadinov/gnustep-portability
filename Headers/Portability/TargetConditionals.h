@@ -110,7 +110,7 @@
     #endif
 #else
     #error TargetConditionals.h: unsupported compiler
-#enif
+#endif
 
 /*
  * TARGET_CPU negatives
