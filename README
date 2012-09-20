@@ -1,0 +1,28 @@
+1 README
+********
+
+This header set is intended to be used while porting Mac apps to GNUstep.
+Currently it consists of two headers you may be interested in:
+    TargetConditionals.h
+    AvailabilityMacros.h
+In future it will include following:
+    OSTypes.h
+    OSAtomic.h
+
+1.1 Install
+===========
+
+Currently there is no automatic installer, just copy files under the 'Headers' folder to the location of your choise.
+
+1.2 Usage
+=========
+
+Add 'Portability' folder to your compilers include path. Build.
+Warning: please do not reference them as <Portability/SomeHeader.h> - it will invariably lead to #ifdefs in code.
+
+1.3 License
+===========
+
+LGPLv2
+
+Happy hacking!
