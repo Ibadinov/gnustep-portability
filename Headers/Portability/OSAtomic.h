@@ -17,14 +17,6 @@
      * Currently, implementations should contain following:
      */
 
-    typedef __OSSpinLock OSSpinLock;
-
-    #define OS_SPINLOCK_INIT __SPIN_LOCK_UNLOCKED_VALUE
-
-    bool OSSpinLockTry(volatile OSSpinLock *lock);
-    void OSSpinLockLock(volatile OSSpinLock *lock);
-    void OSSpinLockUnlock(volatile OSSpinLock *lock);
-
     bool OSAtomicCompareAndSwapIntBarrier(int oldValue, int newValue, volatile int *theValue);
 
 #endif /* OS_ATOMIC_PROTO */
